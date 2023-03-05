@@ -19,7 +19,7 @@ const Map = () => {
       style={{width: "100%", height: "100%"}}
     >
       <Geographies
-        geography="/features.json"
+        geography="./feautures.json"
         fill="#D6D6DA"
         stroke="#FFFFFF"
         strokeWidth={0.5}

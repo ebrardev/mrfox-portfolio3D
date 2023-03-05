@@ -50,8 +50,19 @@ border-radius: 5px;
 background-color: #e8e6e6;
 `
 const Button = styled.button`
+background-color: #d35400;
+color: white;
+border: none;
+font-weight: bold;
+cursor: pointer;
+border-radius: 5px;
+padding: 20px;
 `
 const Right = styled.div`
+flex: 1;
+@media only screen and (max-width: 768px) {
+  display: none;
+}
 `
 const handleSubmit= (e) =>{
   e.preventDefault()
