@@ -1,5 +1,9 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
+import Foxx from './Foxx'
+import Red from './Red'
+import Forest from './Forest'
+
 
 const data = [
   "fox",
@@ -69,18 +73,26 @@ flex:1;
 `
 
 const Works = () => {
+  const [work,setWork] = useState("fox")
   return (
  <Section>
   <Container>
     <Left>
       <List>
         {data.map((item)=>(
-<Item key={item} text={item}>{item}</Item>
+<Item key={item} text={item} onClick={() =>setWork(item)} >{item}</Item>
         ))}
       
       </List>
     </Left>
     <Right>
+    {work === "fox" ? (
+            <Foxx />
+          ) : work === "red" ? (
+            <Red />
+          ) : work ==="forest" (
+            <Forest />
+          )}
 
     </Right>
   </Container>

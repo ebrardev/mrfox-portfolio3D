@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import Navbar from "./Navbar";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls, Sphere, MeshDistortMaterial } from "@react-three/drei";
 
 const Section = styled.div`
   height: 100vh;
@@ -90,7 +92,7 @@ const Right = styled.div`
 `;
 
 const Img = styled.img`
-  width: 800px;
+  width: 400px;
   border-radius: 50%;
   height: 600px;
   object-fit: contain;
@@ -129,6 +131,21 @@ const Hero = () => {
             <Button>Meet Me</Button>
           </Left>
           <Right>
+          <Canvas>
+            {/* <Suspense fallback={null}> */}
+              <OrbitControls enableZoom={false} />
+              <ambientLight intensity={1} />
+              <directionalLight position={[3, 2, 1]} />
+              <Sphere args={[1, 100, 200]} scale={2.4}>
+                <MeshDistortMaterial
+                  color="#d35400"
+                  attach="material"
+                  distort={0.5}
+                  speed={2}
+                />
+              </Sphere>
+            {/* </Suspense> */}
+          </Canvas>
           <Img src="./img/fox.png" />
           </Right>
       </Container>
